@@ -1,28 +1,27 @@
-package com.salesianostriana.EjemploExplicacionSpringProg;
+package com.salesianostriana.EjemploExplicacionSpringProg.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Builder
 @Entity
-@AllArgsConstructor
-@NoArgsConstructor
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Alumno {
-	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue
 	private Long id;
+	private String nombre,apellidos,email;
+	@ManyToOne
+	private Curso curso;
 	
-	private String nombre;
-	private String apellidos;
-	private int edad;
-
 }

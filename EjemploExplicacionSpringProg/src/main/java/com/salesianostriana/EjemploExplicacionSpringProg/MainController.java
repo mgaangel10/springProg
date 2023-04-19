@@ -10,9 +10,7 @@ public class MainController {
 	@Autowired
 	private DummyService service;
 	
-	@GetMapping({"/","/welcome"})
-	public String welcome (@RequestParam(name="nombre", required = false,defaultValue = "Mundo"));
-}
+	
 }
 
 	
