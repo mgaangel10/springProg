@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+
+</head>
+<body>
+    <h1>se muestra todo</h1>
+    <table border="1">
+		<thead>
+			<tr>
+            <th>id</th>
+            <th>nombre</th>
+            <th>apellidos</th>
+            <th>email</th>
+        </tr>
+		</thead>
+		<tbody> 
+			<tr th:each="empleado : ${lista}">
+			<td th:txt="${empleado.id}">1</td>
+			<td th:txt="${empleado.nombre}">nombre</td>
+			<td th:txt="${empleado.apellidos}">apellidos</td>
+			<td th:txt="${empleado.email}">email</td>
+			
+
+        </tr>
+        </tbody>
+        
+       
+    </table>
+    
+</body>
+</html>
