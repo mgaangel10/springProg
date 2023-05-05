@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<!-- De nuevo incluimos el fragmento head, pie y javascript -->
+<head th:replace="~{fragmentos/head::head}">
+<meta charset="UTF-8">
+<title>Inicio</title>
+</head>
+<body th:replace="~{fragmentos/body::body}"">
+	<nav th:replace="~{fragmentos/nav::nav}"></nav>
+	
+	<!-- Begin page content -->
+	<div class="container">
+		<div class="jumbotron">
+			<h1 th:text="${mensaje}">Mensaje</h1>
+		</div>
+	</div>
+	
+	
+</body>
+</html>
