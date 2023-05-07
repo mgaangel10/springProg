@@ -1,0 +1,24 @@
+<form action="@{/editar/submit}" th:object="${empleado}" method="post"   th:fragment="formulario">
+        <div class="formu">
+        <div>
+            <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" th:field="*{nombre}" placeholder="Indique su nombre" name="nombre">
+        </div>
+        <div>
+            <label for="apellidos">Apellidos</label>
+        <input type="text" id="nombre" th:field="*{apellidos}" placeholder="Indique sus apellidos" name="apellidos">
+        </div>
+        
+        <div>
+            <label for="email">Email</label>
+        <input type="email" id="email" th:field="*{email}" placeholder="Indique su email" name="email">
+        </div>
+       
+            <button type="submit"><a th:href="@{/mostrarFormulario}">Enviar</a></button>
+       
+        
+        
+    </div>
+         </form>
+         
+   
