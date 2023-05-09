@@ -12,10 +12,29 @@
 	<nav th:replace="~{fragmentos/nav::nav}">
 		
 	</nav>
-	<form th:replace="~{fragmentos/vistaFormulario::formulario}">
-		
-		
-	</form>
+	<form th:action="${empleado.id != 0} ? @{/editar/submit} : @{/nuevo/submit}" th:object="${empleado}" method="post">
+        <div class="formu">
+			<input th:if="${empleado.id != 0}" type="hidden" name="id" th:field="*{id}" />
+        <div>
+            <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" th:field="*{nombre}"  placeholder="Indique su nombre" >
+        </div>
+        <div>
+            <label for="apellidos">Apellidos</label>
+        <input type="text" id="nombre" name="apellidos" th:field="*{apellidos}"  placeholder="Indique sus apellidos">
+        </div>
+        
+        <div>
+            <label for="email">Email</label> 
+        <input type="email" id="email" name="email" th:field="*{email}"   placeholder="Indique su email">
+        </div>
+       
+          <input type="submit" name="enviar" value="Enviar" />
+       
+        
+        
+    </div>
+         </form>
     
    
     

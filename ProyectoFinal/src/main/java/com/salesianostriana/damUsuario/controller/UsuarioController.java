@@ -21,11 +21,10 @@ public class UsuarioController {
 	
 	@GetMapping ({"/","VistaFormulario"})
 	public String ListarUsuarios(Model model) {
-		Usuario u = new Usuario ();
+		
 		model.addAttribute("lista",user.findall());
 		return "index";
-	}
-	@PostMapping("/añadirUsuario")
+	}	@PostMapping("/añadirUsuario")
 	public String enviado (@ModelAttribute("usuarioFormulario") Usuario u,Model model) {
 		model.addAttribute("usuario",u);
 		return "VistaFormulario";

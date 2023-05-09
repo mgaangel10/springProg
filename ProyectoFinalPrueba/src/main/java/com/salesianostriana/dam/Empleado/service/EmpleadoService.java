@@ -9,6 +9,7 @@ import com.salesianostriana.dam.Empleado.repositorio.EmpleadoRepo;
 
 
 
+
 @Service
 public class EmpleadoService {
 	private EmpleadoRepo emre;
@@ -29,6 +30,11 @@ public class EmpleadoService {
 	public List<Empleado> findAll(){
 		return emre.findAll();
 	}
+	public Empleado findById(long id) {
+		return emre.findById(id).orElse(null);
+	}
+	public void delete(long id) { emre.deleteById(id); }
+	
 	
 
 }
